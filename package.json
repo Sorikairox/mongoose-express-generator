@@ -1,0 +1,44 @@
+{
+  "name": "mongoose-express-generator",
+  "version": "1.0.0",
+  "description": "Mongoose Models et Express controllers and Express Controllers generatorr which goes along mongoose REST utils functions from mongoose-REST-utils\n Models generator and main /bin file are from https://github.com/DamienP33/express-mongoose-generator under MIT license, all credits for these parts go to Damien Perrier",
+  "main": "bin/mongoose-express-gen",
+  "scripts": {
+    "test": "mocha --reporter spec --bail --check-leaks test/",
+    "lint": "jshint ./**/*.js ./bin/mongoose-express-gen",
+    "cs": "jscs ./**/*.js ./bin/mongoose-express-gen"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "preferGlobal": true,
+  "bin": {
+    "mongoose-express-gen": "./bin/mongoose-express-gen"
+  },
+  "dependencies": {
+    "async": "^0.9.0",
+    "commander": "^2.5.0"
+  },
+  "devDependencies": {
+    "jscs": "^2.5.1",
+    "jshint": "^2.8.0",
+    "mkdirp": "^0.5.0",
+    "mocha": "^2.0.1",
+    "nexpect": "^0.4.2",
+    "rimraf": "^2.2.8"
+  },
+  "keywords": [
+    "mongoose",
+    "express",
+    "generator",
+    "REST"
+  ],
+  "files": [
+    "LICENSE",
+    "bin/",
+    "templates/",
+    "lib/"
+  ],
+  "author": "Thomas CRUVEILHER",
+  "license": "MIT"
+}
