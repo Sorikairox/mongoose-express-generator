@@ -5,7 +5,7 @@ var router = express.Router();
 const mongoose_utils = require("mongoose-REST-utils");
 
 /**
- * This function comment is parsed by doctrine
+ * Create a new {name}
  * @route POST /{route}
  * @group {route} - Operations about {route}
  {postParams}
@@ -18,7 +18,7 @@ router.post("/", function (req, res) {
 });
 
 /**
- * This function comment is parsed by doctrine
+ * Modify {name}
  * @route PUT /{route}
  * @group {route} - Operations about {route}
  {postParams}
@@ -33,7 +33,7 @@ router.put("/", function (req, res) {
 
 
 /**
- * This function comment is parsed by doctrine
+ * Get all {pluralName}
  * @route GET /{route}
  * @group {route} - Operations about {route}
  {getParams}
@@ -47,7 +47,7 @@ router.get("/", function (req, res) {
 });
 
 /**
- * This function comment is parsed by doctrine
+ * Delete a {name}
  * @route DELETE /{route}/:id
  * @group {route} - Operations about {route}
  * @param {string} id.query.required
