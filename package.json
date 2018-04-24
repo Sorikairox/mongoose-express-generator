@@ -8,6 +8,7 @@
     "lint": "jshint ./**/*.js ./bin/mongoose-express-gen",
     "cs": "jscs ./**/*.js ./bin/mongoose-express-gen"
   },
+  "readme": "README.md",
   "engines": {
     "node": ">= 0.10.0"
   },
