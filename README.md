@@ -1,7 +1,7 @@
 # mongoose-express-generator
 Mongoose Models and Express Controllers generator which goes along mongoose REST utils functions from mongoose-REST-utils\n Models generator and main /bin file are from https://github.com/DamienP33/express-mongoose-generator under MIT license, all credits for these parts go to Damien Perrier. All I did was change the model template to fit my own, and change some test.
 
-It also create 
+It also create swagger documentation via comments for each controllers. All in one ;)
 
 It’s a mongoose model, REST express controller/router code generator for Express.js 4 application.
 
