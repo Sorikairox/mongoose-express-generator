@@ -1,11 +1,5 @@
 var {modelName} = require({modelPath});
 
-/**
- * {controllerName}.js
- *
- * @description :: Server-side logic for managing {pluralName}.
- */
-
 var express = require('express');
 var router = express.Router();
 const mongoose_utils = require("mongoose-REST-utils");

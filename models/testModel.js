@@ -3,7 +3,6 @@ var Schema   = mongoose.Schema;
 var mongoosePaginate = require('mongoose-paginate');
 var testSchema = new Schema({
 	'testname' : String,
-	'testnumber' : String,
 	'testage' : Number
 });
 testSchema.plugin(mongoosePaginate);
