@@ -14,8 +14,8 @@ const mongoose_utils = require("mongoose-REST-utils");
 // @Description create tests
 // @Accept  json
 
-\\ @Param testname body
-\\ @Param testage body
+// @Param testname body
+// @Param testage body
 // @Success 200 {array}
 // @Resource /test
 // @Router /test [post]

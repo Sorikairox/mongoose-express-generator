@@ -1,6 +1,7 @@
 # mongoose-express-generator
 Mongoose Models and Express Controllers generator which goes along mongoose REST utils functions from mongoose-REST-utils\n Models generator and main /bin file are from https://github.com/DamienP33/express-mongoose-generator under MIT license, all credits for these parts go to Damien Perrier. All I did was change the model template to fit my own, and change some test.
 
+It also create 
 
 It’s a mongoose model, REST express controller/router code generator for Express.js 4 application.
 
@@ -78,34 +79,71 @@ module.exports = mongoose.model('car', carSchema);
 ### Controller
 controllers/carController.js :
 ```javascript
-
-var Car = require('../models/car');
+var TestModel = require('../models/testModel.js');
 
 /**
- * {controllerName}.js
+ * testController.js
  *
- * @description :: Server-side logic for managing {pluralName}.
+ * @description :: Server-side logic for managing tests.
  */
 
 var express = require('express');
 var router = express.Router();
 const mongoose_utils = require("mongoose-REST-utils");
 
+// @Title createtests
+// @Description create tests
+// @Accept  json
+
+// @Param testname body
+// @Param testage body
+// @Success 200 {array}
+// @Resource /test
+// @Router /test [post]
+
 router.post("/", function (req, res) {
-    mongoose_utils.basicPost(req, res, Car);
+    mongoose_utils.basicPost(req, res, TestModel);
 });
+
+// @Title modifytests
+// @Description modify tests
+// @Accept  json
+
+// @Param testname body
+// @Param testage body
+// @Success 200 {array}
+// @Resource /test
+// @Router /test [put]
 
 
 router.put("/", function (req, res) {
-    mongoose_utils.basicPut(req, res, Car);
+    mongoose_utils.basicPut(req, res, TestModel);
 });
+
+// @Title gettests
+// @Description get tests
+// @Accept  json
+
+// @Param testname query
+// @Param testage query
+// @Success 200 {array}
+// @Resource /test
+// @Router /test [put]
 
 router.get("/", function (req, res) {
-    mongoose_utils.basicGet(req, res, Car);
+    mongoose_utils.basicGet(req, res, TestModel);
 });
 
+// @Title deletetests
+// @Description delete tests by ID
+// @Accept  json
+// @Param id path
+// @Success 200 {array}
+// @Resource /test
+// @Router /test [put]
+
 router.delete("/:id", function (req, res) {
-    mongoose_utils.basicDelete(req, res, Car);
+    mongoose_utils.basicDelete(req, res, TestModel);
 });
 
 module.exports = router;
