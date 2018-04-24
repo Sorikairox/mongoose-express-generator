@@ -34,7 +34,7 @@ router.put("/", function (req, res) {
 
 /**
  * This function comment is parsed by doctrine
- * @route PUT /{route}
+ * @route GET /{route}
  * @group {route} - Operations about {route}
  {getParams}
  * @returns {object} 200 - An array of {pluralName}
