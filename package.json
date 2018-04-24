@@ -1,6 +1,6 @@
 {
   "name": "mongoose-express-generator",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "Mongoose Models et Express controllers and Express Controllers generatorr which goes along mongoose REST utils functions from mongoose-REST-utils\n Models generator and main /bin file are from https://github.com/DamienP33/express-mongoose-generator under MIT license, all credits for these parts go to Damien Perrier",
   "main": "bin/mongoose-express-gen",
   "scripts": {
