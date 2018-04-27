@@ -1,9 +1,7 @@
 # mongoose-express-generator
-Mongoose Models and Express Controllers generator which goes along mongoose REST utils functions from mongoose-REST-utils\n Models generator and main /bin file are from https://github.com/DamienP33/express-mongoose-generator under MIT license, all credits for these parts go to Damien Perrier. All I did was change the model template to fit my own, and change some test.
+Mongoose Models and Express Controllers generator which goes along mongoose REST utils functions from https://www.npmjs.com/package/mongoose-rest-utils\
+ Models generator and main /bin file are from https://github.com/DamienP33/express-mongoose-generator under MIT license, all credits for these parts go to Damien Perrier. All I did was change the model template to fit my own, and change some test.
 
-It also create swagger documentation via comments for each controllers. All in one ;)
-
-It’s a mongoose model, REST express controller/router code generator for Express.js 4 application.
 
 ## Installation
 ```bash
@@ -16,7 +14,6 @@ Generates a Mongoose model, a REST controller and Express router :
 ```bash
 $ mongoose-express-gen -m car -f carDoor:number,color -r
         create: ./models/cardModel.js
-        create: ./routes/cardRoutes.js
         create: ./controllers/cardController.js
 ```
 
@@ -53,7 +50,6 @@ Field Name (press <return> to stop adding fields) :
 Generate Rest (yes/no) ? [yes] : 
 Files tree generation grouped by Type or by Module (t/m) ? [t] : 
         create: ./models/carModel.js
-        create: ./routes/carsRoutes.js
         create: ./controllers/carController.js
 ```
 
@@ -79,71 +75,34 @@ module.exports = mongoose.model('car', carSchema);
 ### Controller
 controllers/carController.js :
 ```javascript
-var TestModel = require('../models/testModel.js');
+
+var Car = require('../models/car');
 
 /**
- * testController.js
+ * {controllerName}.js
  *
- * @description :: Server-side logic for managing tests.
+ * @description :: Server-side logic for managing {pluralName}.
  */
 
 var express = require('express');
 var router = express.Router();
 const mongoose_utils = require("mongoose-REST-utils");
 
-// @Title createtests
-// @Description create tests
-// @Accept  json
-
-// @Param testname body
-// @Param testage body
-// @Success 200 {array}
-// @Resource /test
-// @Router /test [post]
-
 router.post("/", function (req, res) {
-    mongoose_utils.basicPost(req, res, TestModel);
+    mongoose_utils.basicPost(req, res, Car);
 });
-
-// @Title modifytests
-// @Description modify tests
-// @Accept  json
-
-// @Param testname body
-// @Param testage body
-// @Success 200 {array}
-// @Resource /test
-// @Router /test [put]
 
 
 router.put("/", function (req, res) {
-    mongoose_utils.basicPut(req, res, TestModel);
+    mongoose_utils.basicPut(req, res, Car);
 });
-
-// @Title gettests
-// @Description get tests
-// @Accept  json
-
-// @Param testname query
-// @Param testage query
-// @Success 200 {array}
-// @Resource /test
-// @Router /test [put]
 
 router.get("/", function (req, res) {
-    mongoose_utils.basicGet(req, res, TestModel);
+    mongoose_utils.basicGet(req, res, Car);
 });
 
-// @Title deletetests
-// @Description delete tests by ID
-// @Accept  json
-// @Param id path
-// @Success 200 {array}
-// @Resource /test
-// @Router /test [put]
-
 router.delete("/:id", function (req, res) {
-    mongoose_utils.basicDelete(req, res, TestModel);
+    mongoose_utils.basicDelete(req, res, Car);
 });
 
 module.exports = router;
@@ -156,7 +115,6 @@ Files tree generation grouped by Type or by Module (t/m) ? [t] : m
         create: ./car
         create: ./car/carModel.js
         create: ./car/carController.js
-        create: ./car/carRoutes.js
 ```
 
 You then only have to add router in app.js file and MongoDB connection whit Mongoose.
