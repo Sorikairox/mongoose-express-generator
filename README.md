@@ -5,6 +5,7 @@ Mongoose Models and Express Controllers generator which goes along mongoose REST
 
 It also create swagger documentation via comments for each controllers. Use https://www.npmjs.com/package/express-swagger-generator for generating the awesome documentation.
 
+Willing to get awesomes Typescript classes from your model in no time ? Check my other package : https://www.npmjs.com/package/mongoose-to-typescript
 ## Installation
 ```bash
 $ npm install -g mongoose-express-generator
