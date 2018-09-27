@@ -14,7 +14,7 @@ const mongoose_utils = require("mongoose-rest-utils");
  */
 
 router.post("/", function (req, res) {
-    mongoose_utils.basicPost(req, res, {modelName});
+    mongoose_utils.post(req, res, {modelName});
 });
 
 /**
@@ -27,7 +27,7 @@ router.post("/", function (req, res) {
  */
 
 router.put("/", function (req, res) {
-    mongoose_utils.basicPut(req, res, {modelName});
+    mongoose_utils.put(req, res, {modelName});
 });
 
 
@@ -43,7 +43,7 @@ router.put("/", function (req, res) {
 
 
 router.get("/", function (req, res) {
-    mongoose_utils.basicGet(req, res, {modelName});
+    mongoose_utils.get(req, res, {modelName});
 });
 
 /**
@@ -57,7 +57,7 @@ router.get("/", function (req, res) {
 
 
 router.delete("/:id", function (req, res) {
-    mongoose_utils.basicDelete(req, res, {modelName});
+    mongoose_utils.delete(req, res, {modelName});
 });
 
 module.exports = router;
