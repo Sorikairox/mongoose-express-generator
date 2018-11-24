@@ -4,7 +4,7 @@ var express = require('express');
 var router = express.Router();
 const mongoose_utils = require("mongoose-rest-utils");
 /**
- * @typedef {modelName}
+ * @typedef {name}
  {objectProperties}
  */
 
