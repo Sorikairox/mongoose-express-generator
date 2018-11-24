@@ -17,15 +17,15 @@ var rl = readline.createInterface({
     output: process.stdout
 });
 
-var ALLOWED_FIELDS_TYPES = ['string', 'number', 'date', 'boolean', 'array', 'objectId'];
+var ALLOWED_FIELDS_TYPES = ['string', 'number', 'date', 'boolean', 'array', 'objectId', 'objectArray'];
 var ALLOWED_REST_ARGUMENT = {'YES': 'yes', 'NO': 'no'};
 var ALLOWED_FILE_TREE_ARGUMENT = {'TYPE': 't', 'MODULE': 'm'};
 var CLI_PHRASES = {
-    AVAILABLE_TYPE: 'Available types : string, number, date, boolean, array, objectId',
+    AVAILABLE_TYPE: 'Available types : string, number, date, boolean, array, objectId, objectArray',
     QUESTION_MODEL_NAME: 'Model Name : ',
     QUESTION_FIELD_NAME: 'Field Name (press <return> to stop adding fields) : ',
     QUESTION_FIELD_TYPE: 'Field Type [string] : ',
-    QUESTION_FIELD_REF: 'Reference (model name referred by the objectId field) : ',
+    QUESTION_FIELD_REF: 'Reference (model name or native types \'String, Number, Date, Boolean\') : ',
     QUESTION_GENERATE_REST: 'Generate Rest (yes/no) ? [yes] : ',
     QUESTION_FILES_TREE: 'Files tree generation grouped by Type or by Module (t/m) ? [t] : ',
     ERROR_MODEL_NAME: 'Argument required : Model name',
@@ -103,7 +103,7 @@ function runInteractiveMode (path, ts) {
                                     );
                                 },
                                 reference: function (cb) {
-                                    if (currentField.type === 'objectId') {
+                                    if (currentField.type === 'objectId' || currentField.type === 'objectArray' || currentField.type === "array") {
                                         askQuestion(CLI_PHRASES.QUESTION_FIELD_REF, null, function (referenceName) {
                                             referenceName = (referenceName.trim().length === 0) ?
                                                 'INSERT_YOUR_REFERENCE_NAME_HERE'
