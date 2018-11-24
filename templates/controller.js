@@ -3,6 +3,11 @@ var {modelName} = require({modelPath});
 var express = require('express');
 var router = express.Router();
 const mongoose_utils = require("mongoose-rest-utils");
+/**
+ * @typedef {modelName}
+ {objectProperties}
+ */
+
 
 /**
  * Create a new {name}
